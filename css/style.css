@@ -19,3 +19,18 @@
 	margin-top: 25px;
 	text-transform: uppercase;
 }
+
+.compareButton {
+	background: #D84861;
+	padding: 20px;
+	text-align: center;
+	font-size: 20px;
+	color: white;
+	cursor: pointer;
+}
+
+.stylesTable {
+	margin: auto;
+	width: 80% !important;
+	margin-top: 25px;
+}
