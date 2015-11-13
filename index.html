@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Cost Analysis</title>
+	<link rel="stylesheet" href="css/style.css">	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+    <script data-require="angular.js@1.3.10" data-semver="1.3.10" src="https://code.angularjs.org/1.3.10/angular.js"></script>	
+	<script src="js/script.js"></script>       	
+</head>
+<body ng-controller="myController">
+	<div>
+	    <img class="logo" src="images/logo.png" alt="Logo Image">	
+	</div>
+	<form class="form">
+		Season:<br>
+			<select ng-model="season">
+  				<option value="select">...</option>
+  				<option value="sp16">Spring 2016</option>
+  				<option value="pf16">Pre-Fall 2016</option>
+  				<option value="fa16">Fall 2016</option>
+  				<option value="re16">Resort 2016</option>
+			</select>
+		<br><br>
+		Collection:<br>
+			<select ng-model="collection">
+   				<option value="select">...</option>
+   				<option value="collection">Collection</option>
+   				<option value="star">Star USA</option>
+   				<option value="luxe">Luxe</option>
+			</select>
+		<br><br>
+		Category:<br>
+			<select ng-model="category">
+   				<option value="select">...</option>
+   				<option value="ow">Outerwear</option>
+   				<option value="soft">Soft Jacket</option>
+    			<option value="tailored">Tailored</option>
+    			<option value="denim">Denim</option>
+    			<option value="sportpant">Sport Pant</option>
+    			<option value="dresspant">Dress Pant</option>  
+   				<option value="shirt">Sport Shirt</option>
+    			<option value="dressshirt">Dress Shirt</option>
+    			<option value="short">Short</option>
+    			<option value="leather">Leather Outerwear</option>
+    			<option value="vest">Vest</option>
+    			<option value="knit">Knit</option>  
+   				<option value="sweater">Sweater</option>
+    			<option value="footwear">Footwear</option>
+    			<option value="bag">Bag</option>
+    			<option value="slg">Small Leather Good</option>
+    			<option value="scarf">Scarf</option>
+    			<option value="hat">Woven Hat</option>      					  					 					    					    					
+  					
+			</select>
+		<br><br>
+		Style #:
+		<input type="text" name="STYLE #" ng-model="styleNum">
+		<br> <br>
+		Fabric Code:
+		<input type="text" name="FABRIC CODE" ng-model="fabric">
+		<br><br>
+		Color(s):<br>
+			<select ng-model="styleColor">
+   				<option value="select">...</option>
+   				<option value="black">001 Black</option> 
+    			<option value="white">100 White</option> 
+    			<option value="indigo">410 Indigo</option> 
+
+			</select>
+		<br><br>
+ 		<input type="submit" value="Upload Image">										
+		<br><br>
+ 		<input type="submit" value="Submit" class="btn btn-success btn-large" ng-click="submitButton()">
+	</form>
+	<div ng-repeat="article in database" class="chart">
+		{{article.season}}-{{article.collection}}-{{article.category}}-{{article.styleNumber}}-{{article.fabric}}-{{article.color}}
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
