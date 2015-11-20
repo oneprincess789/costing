@@ -1,4 +1,21 @@
-angular.module('myApp', [])
+angular.module('myApp', ['ngRoute'])
+    .config(function ($routeProvider) {
+        $routeProvider
+            .when('/', {
+                templateUrl: 'templates/start.html'
+            })
+            .when('/form', {
+                templateUrl: 'templates/form.html',
+                controller: 'myController'
+            })
+            .when('/articles', {
+                templateUrl: 'templates/articlesList.html',
+                controller: 'myController'
+            })
+            .otherwise({
+                redirectTo: '/'
+            });
+    })
     .controller('myController', ['$scope', function myController($scope) {
         $scope.season;
         $scope.collection;
@@ -49,14 +66,24 @@ angular.module('myApp', [])
             "$$hashKey": "object:11"
         }];
 
+        $scope.rowsRed = false;
+
+        var collectionNames = ["Colelction", "Star USA", "Luxe"];
+        var categoryNames = ["Outerwear", "Soft Jacket", "Tailored Clothing", "Denim", "Sport Pant", "Dress Pant", "Sportshirt", "Dress Shirt", "Short", "Leather Outerwear", "Sport Vest", "Knit", "Sweater", "Footwear", "Bag", "Small Leather Good", "Woven Scarf", "Woven Hat"]
+        var styleColorNames = {
+            "001": "Black",
+            "100": "White",
+            "410": "Indigo"
+        };
+
         $scope.compareArray = [];
 
         $scope.submitButton = function () {
             var article = {
                 season: $scope.season,
-                collection: $scope.collection,
-                category: $scope.category,
-                color: $scope.styleColor,
+                collection: collectionNames[$scope.collection],
+                category: categoryNames[$scope.category],
+                color: styleColorNames[$scope.styleColor],
                 styleNumber: $scope.styleNum,
                 fabric: $scope.fabric
             }
@@ -65,7 +92,7 @@ angular.module('myApp', [])
             $scope.clearForm();
         }
 
-        $scope.clearForm = function() {
+        $scope.clearForm = function () {
             $scope.season = '';
             $scope.collection = '';
             $scope.category = '';
@@ -75,18 +102,20 @@ angular.module('myApp', [])
             $scope.searchText = '';
         };
 
-        $scope.rowClicked = function(styleNumber) {
+        $scope.rowClicked = function (styleNumber, index) {
             var position = $scope.compareArray.indexOf(styleNumber);
 
-            if(position == -1) {
+            if (position == -1) {
                 $scope.compareArray.push(styleNumber);
             } else {
                 $scope.compareArray.splice(position, 1);
             }
             console.log($scope.compareArray);
+
+            $scope.rowIndexClicked = index;
         };
 
-        $scope.compare = function() {
+        $scope.compare = function () {
             console.log("I want to compare this articles: " + $scope.compareArray);
         };
     }]);

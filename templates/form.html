@@ -1,0 +1,62 @@
+<form class="form">
+    Season:<br>
+    <select ng-model="season">
+        <option value="select">...</option>
+        <option value="SP16">Spring 2016</option>
+        <option value="PF16">Pre-Fall 2016</option>
+        <option value="FA16">Fall 2016</option>
+        <option value="RE16">Resort 2016</option>
+    </select>
+    <br><br>
+    Collection:<br>
+    <select ng-model="collection">
+        <option value="-1">...</option>
+        <option value="0">Collection</option>
+        <option value="1">Star USA</option>
+        <option value="2">Luxe</option>
+    </select>
+    <br><br>
+    Category:<br>
+    <select ng-model="category">
+        <option value="select">...</option>
+        <option value="0">Outerwear</option>
+        <option value="1">Soft Jacket</option>
+        <option value="2">Tailored</option>
+        <option value="3">Denim</option>
+        <option value="4">Sport Pant</option>
+        <option value="5">Dress Pant</option>
+        <option value="6">Sport Shirt</option>
+        <option value="7">Dress Shirt</option>
+        <option value="8">Short</option>
+        <option value="9">Leather Outerwear</option>
+        <option value="10">Vest</option>
+        <option value="11">Knit</option>
+        <option value="12">Sweater</option>
+        <option value="13">Footwear</option>
+        <option value="14">Bag</option>
+        <option value="15">Small Leather Good</option>
+        <option value="16">Scarf</option>
+        <option value="17">Woven Hat</option>
+
+    </select>
+    <br><br>
+    Style #:
+    <input type="text" name="STYLE #" ng-model="styleNum">
+    <br> <br>
+    Fabric Code:
+    <input type="text" name="FABRIC CODE" ng-model="fabric">
+    <br><br>
+    Color(s):<br>
+    <select ng-model="styleColor">
+        <option value="select">...</option>
+        <option value="001">001 Black</option>
+        <option value="100">100 White</option>
+        <option value="410">410 Indigo</option>
+
+    </select>
+    <br><br>
+    <input type="submit" value="Upload Image">
+    <br><br>
+    <input type="submit" value="Submit" class="btn btn-success btn-large" ng-click="submitButton()">
+    <button class="btn btn-warning" ng-click="clearForm()">Clear</button>
+</form>
