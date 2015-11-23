@@ -68,7 +68,7 @@ angular.module('myApp', ['ngRoute'])
 
         $scope.rowsRed = false;
 
-        var collectionNames = ["Colelction", "Star USA", "Luxe"];
+        var collectionNames = ["Collection", "Star USA", "Luxe"];
         var categoryNames = ["Outerwear", "Soft Jacket", "Tailored Clothing", "Denim", "Sport Pant", "Dress Pant", "Sportshirt", "Dress Shirt", "Short", "Leather Outerwear", "Sport Vest", "Knit", "Sweater", "Footwear", "Bag", "Small Leather Good", "Woven Scarf", "Woven Hat"]
         var styleColorNames = {
             "001": "Black",
