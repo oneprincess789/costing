@@ -1,4 +1,4 @@
-angular.module('myApp', ['ngRoute'])
+angular.module('myApp', ['ngRoute', 'firebase'])
     .config(function ($routeProvider) {
         $routeProvider
             .when('/', {
@@ -16,7 +16,7 @@ angular.module('myApp', ['ngRoute'])
                 redirectTo: '/'
             });
     })
-    .controller('myController', ['$scope', function myController($scope) {
+    .controller('myController', ['$scope', '$firebaseArray', function myController($scope, $firebaseArray) {
         $scope.season;
         $scope.collection;
         $scope.category;
@@ -24,47 +24,20 @@ angular.module('myApp', ['ngRoute'])
         $scope.styleNum;
         $scope.fabric;
         $scope.searchText;
-        $scope.database = [{
-            "season": "pf16",
-            "collection": "collection",
-            "category": "ow",
-            "color": "black",
-            "styleNumber": "1",
-            "fabric": "1234",
-            "$$hashKey": "object:3"
-        }, {
-            "season": "pf16",
-            "collection": "collection",
-            "category": "ow",
-            "color": "black",
-            "styleNumber": "2",
-            "fabric": "123",
-            "$$hashKey": "object:5"
-        }, {
-            "season": "pf16",
-            "collection": "collection",
-            "category": "ow",
-            "color": "black",
-            "styleNumber": "3",
-            "fabric": "123",
-            "$$hashKey": "object:7"
-        }, {
-            "season": "pf16",
-            "collection": "collection",
-            "category": "ow",
-            "color": "black",
-            "styleNumber": "4",
-            "fabric": "123",
-            "$$hashKey": "object:9"
-        }, {
-            "season": "pf16",
-            "collection": "collection",
-            "category": "ow",
-            "color": "black",
-            "styleNumber": "5",
-            "fabric": "123",
-            "$$hashKey": "object:11"
-        }];
+
+        //Create firebase
+        var ref = new Firebase("https://consting.firebaseio.com/seasons");
+        var firebaseObjectSeasons = $firebaseArray(ref);
+
+        //Load the Data in an object
+        firebaseObjectSeasons.$loaded(
+            function (data) {
+                $scope.database = data; // true
+            },
+            function (error) {
+                console.error("Error:", error);
+            }
+        );
 
         $scope.rowsRed = false;
 
@@ -87,7 +60,17 @@ angular.module('myApp', ['ngRoute'])
                 styleNumber: $scope.styleNum,
                 fabric: $scope.fabric
             }
-            $scope.database.push(article);
+
+            //Push article to firebase
+            var firebase = new Firebase("https://consting.firebaseio.com/seasons");
+
+            firebase.push(article, function (error) {
+                if (error) {
+                    alert("something happened");
+                } else {
+                    alert("Data stored");
+                }
+            });
 
             $scope.clearForm();
         }
@@ -101,6 +84,10 @@ angular.module('myApp', ['ngRoute'])
             $scope.fabric = '';
             $scope.searchText = '';
         };
+
+        //$scope.selectedClass = function(index) {
+        //    if($scope.compareArray) {}
+        //};
 
         $scope.rowClicked = function (styleNumber, index) {
             var position = $scope.compareArray.indexOf(styleNumber);

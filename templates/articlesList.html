@@ -13,7 +13,7 @@
     <th>Color</th>
     </thead>
     <tbody>
-    <tr ng-repeat="article in database  | filter: searchText" ng-click="rowClicked(article.styleNumber, $index)" ng-class="{rowsRed: rowIndexClicked ==  $index}">
+    <tr ng-repeat="article in database  | filter: searchText" ng-click="rowClicked(article.styleNumber, $index)">
         <td>{{article.season}}</td>
         <td>{{article.collection}}</td>
         <td>{{article.category}}</td>
