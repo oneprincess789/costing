@@ -1,5 +1,7 @@
+/*global angular*/
 angular.module('myApp', ['ngRoute', 'firebase'])
     .config(function ($routeProvider) {
+        'use strict';
         $routeProvider
             .when('/', {
                 templateUrl: 'templates/start.html'
@@ -17,6 +19,7 @@ angular.module('myApp', ['ngRoute', 'firebase'])
             });
     })
     .controller('myController', ['$scope', '$firebaseArray', function myController($scope, $firebaseArray) {
+        'use strict';
         $scope.season;
         $scope.collection;
         $scope.category;

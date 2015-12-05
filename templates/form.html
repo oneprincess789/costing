@@ -1,5 +1,63 @@
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cost Analysis</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- jQuery library -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script data-require="angular.js@1.3.10" data-semver="1.3.10" src="https://code.angularjs.org/1.3.10/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-route.min.js"></script>
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body ng-controller="myController">
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img class="logo" src="../images/logo.png" alt="Logo Image">
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="form.html">Form</a></li>
+                    <li><a href="articlesList.html">Styles</a></li>
+                    <li><a href="seasons.html">Seasons</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+    <div ng-view></div>
+</body>
+
 <form class="form">
-    Season:<br>
+    Season:
     <select ng-model="season">
         <option value="select">...</option>
         <option value="SP16">Spring 2016</option>
@@ -7,16 +65,14 @@
         <option value="FA16">Fall 2016</option>
         <option value="RE16">Resort 2016</option>
     </select>
-    <br><br>
-    Collection:<br>
+    Collection:
     <select ng-model="collection">
         <option value="-1">...</option>
         <option value="0">Collection</option>
         <option value="1">Star USA</option>
         <option value="2">Luxe</option>
     </select>
-    <br><br>
-    Category:<br>
+    Category:
     <select ng-model="category">
         <option value="select">...</option>
         <option value="0">Outerwear</option>
@@ -42,11 +98,10 @@
     <br><br>
     Style #:
     <input type="text" name="STYLE #" ng-model="styleNum">
-    <br> <br>
     Fabric Code:
     <input type="text" name="FABRIC CODE" ng-model="fabric">
-    <br><br>
-    Color(s):<br>
+<input type="enter" value="Enter Fabric Info" class="btn btn-info btn-small">
+    Color(s):
     <select ng-model="styleColor">
         <option value="select">...</option>
         <option value="001">001 Black</option>
