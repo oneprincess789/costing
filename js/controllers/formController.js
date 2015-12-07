@@ -26,7 +26,7 @@ angular.module('myApp')
         }
 
         //Push article to firebase
-        var firebase = new Firebase("https://consting.firebaseio.com/seasons");
+        var firebase = new Firebase("https://costinganalysis.firebaseio.com/seasons");
 
         firebase.push(article, function (error) {
             if (error) {

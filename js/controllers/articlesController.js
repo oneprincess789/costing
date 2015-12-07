@@ -2,7 +2,7 @@ angular.module('myApp')
 
 .controller('articlesController', ['$scope', function ($scope) {
     //Create firebase
-    var ref = new Firebase("https://consting.firebaseio.com/seasons");
+    var ref = new Firebase("https://costinganalysis.firebaseio.com/");
     var firebaseObjectSeasons = $firebaseArray(ref);
 
     //Load the Data in an object
