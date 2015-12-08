@@ -1,8 +1,9 @@
 angular.module('myApp')
 
-.controller('articlesController', ['$scope', function ($scope) {
+
+.controller('articlesController', ['$scope', '$firebaseArray', function ($scope, $firebaseArray) {
     //Create firebase
-    var ref = new Firebase("https://costinganalysis.firebaseio.com/");
+    var ref = new Firebase("https://costinganalysis.firebaseio.com/seasons");
     var firebaseObjectSeasons = $firebaseArray(ref);
 
     //Load the Data in an object
@@ -17,7 +18,7 @@ angular.module('myApp')
 
     $scope.rowsRed = false;
     $scope.compareArray = [];
-    
+
     //$scope.selectedClass = function(index) {
     //    if($scope.compareArray) {}
     //};
