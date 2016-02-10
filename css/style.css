@@ -57,3 +57,8 @@
     border-bottom: 2px solid white;
     color: white;
 }
+
+.homePage {
+    text-align: center;
+    font-size: 20pt;
+}
