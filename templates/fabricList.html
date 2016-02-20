@@ -11,11 +11,12 @@
     <th>Content</th>
     </thead>
     <tbody>
-    <tr ng-repeat="fabric in database  | filter: searchText" ng-click="rowClicked(article.styleNumber, $index)">
+    <tr ng-repeat="fabric in database  | filter: searchText">
         <td>{{fabric.code}}</td>
         <td>{{fabric.mill}}</td>
         <td>{{fabric.article}}</td>
         <td>{{fabric.content}}</td>
+        <td><i class="fa fa-trash pointer" ng-click="deleteFabric(fabric.$id)"></i></td>
     </tr>
     </tbody>
 </table>
