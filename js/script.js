@@ -19,6 +19,14 @@ angular.module('myApp', ['ngRoute', 'firebase'])
                 templateUrl: 'templates/home.html',
                 controller: 'homeController'
             })
+            .when('/fabrics', {
+                templateUrl: 'templates/fabric.html',
+                controller: 'fabricController'
+            })
+            .when('/fabricList', {
+                templateUrl: 'templates/fabricList.html',
+                controller: 'fabricListController'
+            })
             .otherwise({
                 redirectTo: '/'
             });
