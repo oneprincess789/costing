@@ -62,12 +62,12 @@
 }
 .about {
     padding-top: 40px;
+    padding-bottom: 350px;
 }
 .error {
     color: red;
     font-size: 11px;
 }
-
 .fabricEntryTitle {
     padding-top: 50px;
     text-align: center;
@@ -75,23 +75,36 @@
     font-size: 60pt;
     color: white;
 }
-
 .fabricEntryPage {
     background-image: url("../images/fabric.jpg");
     margin-top: -75px;
     width: 100%;
     height: 900px;
     font-family: 'Open Sans', sans-serif;
-    color: white;
     font-size: 20px;
-    background-color: rgba(0, 0, 0, 0.5);    
+    color: white;
 }
-
 .blackFont {
     color: black;
 }
-
 .pointer {
     cursor: pointer;
 }
-
+.addFabric {
+    text-align: center;
+}
+.addFabricModal {
+    color: black;
+}
+.fabricModalForm {
+    text-align: center;
+    padding: 20px;
+}
+.solution {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    background-color: darkgrey;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    text-align: center;
+}

@@ -1,6 +1,6 @@
 angular.module('myApp')
 
-.controller('formController', ['$scope', function ($scope) {
+.controller('formController', ['$scope', '$firebaseArray', function ($scope, $firebaseArray) {
     var collectionNames = ["Collection", "Star USA", "Luxe"];
     var categoryNames = ["Outerwear", "Soft Jacket", "Tailored Clothing", "Denim", "Sport Pant", "Dress Pant", "Sportshirt", "Dress Shirt", "Short", "Leather Outerwear", "Sport Vest", "Knit", "Sweater", "Footwear", "Bag", "Small Leather Good", "Woven Scarf", "Woven Hat"]
     var styleColorNames = {
@@ -13,9 +13,28 @@ angular.module('myApp')
     $scope.category;
     $scope.styleColor;
     $scope.styleNum;
-    $scope.fabric;
+    $scope.fabricChoice;
     $scope.searchText;
     $scope.showSeasonError = false;
+    $scope.fabrics;
+
+    var ref = new Firebase("https://costinganalysis.firebaseio.com/fabric");
+
+    var firebaseObjectFabrics = $firebaseArray(ref);
+
+    //Load the Data in an object
+    firebaseObjectFabrics.$loaded(
+        function (data) {
+            $scope.fabrics = data; // true
+            console.log($scope.fabrics)
+        },
+        function (error) {
+            console.error("Error:", error);
+        }
+
+    );
+
+
     $scope.submitButton = function () {
         var formIsOk = checkForm();
         if (formIsOk == false) {
@@ -29,7 +48,7 @@ angular.module('myApp')
             category: categoryNames[$scope.category],
             color: styleColorNames[$scope.styleColor],
             styleNumber: $scope.styleNum,
-            fabric: $scope.fabric
+            fabric: $scope.fabricChoice
         }
 
         //Push article to firebase

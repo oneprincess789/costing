@@ -19,13 +19,13 @@ angular.module('myApp', ['ngRoute', 'firebase'])
                 templateUrl: 'templates/home.html',
                 controller: 'homeController'
             })
-            .when('/fabrics', {
+            .when('/fabric', {
                 templateUrl: 'templates/fabric.html',
-                controller: 'fabricController'
-            })
-            .when('/fabricList', {
-                templateUrl: 'templates/fabricList.html',
                 controller: 'fabricListController'
+            })
+            .when('/about', {
+                templateUrl: 'templates/about.html',
+                controller: 'aboutController'
             })
             .otherwise({
                 redirectTo: '/'

@@ -44,10 +44,11 @@
     <br> Style #:
     <input type="text" name="STYLE #" ng-model="styleNum">
     <p class="error" ng-show="showStyleNumError">Please Enter A Style Number!</p>
-    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
-
-        Assign A Fabric
-    </button>
+    
+    <select ng-model="fabricChoice">
+        <option ng-repeat="fabric in fabrics" value="{{fabric}}">{{fabric.fabricCode}}</option>
+    </select>
+    
     <p class="error" ng-show="showFabricError">Please Assign A Fabric!</p>
     Color(s):
     <select ng-model="styleColor">
