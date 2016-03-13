@@ -8,6 +8,10 @@ angular.module('myApp')
         "100": "White",
         "410": "Indigo"
     };
+
+
+    $scope.myImage = '';
+    $scope.myCroppedImage = '';
     $scope.season;
     $scope.collection;
     $scope.category;
@@ -17,6 +21,19 @@ angular.module('myApp')
     $scope.searchText;
     $scope.showSeasonError = false;
     $scope.fabrics;
+
+    var handleFileSelect = function (evt) {
+        var file = evt.currentTarget.files[0];
+        var reader = new FileReader();
+        reader.onload = function (evt) {
+            $scope.$apply(function ($scope) {
+                $scope.myImage = evt.target.result;
+            });
+        };
+        reader.readAsDataURL(file);
+    };
+
+    angular.element(document.querySelector('#fileInput')).on('change', handleFileSelect);
 
     var ref = new Firebase("https://costinganalysis.firebaseio.com/fabric");
 
@@ -42,13 +59,17 @@ angular.module('myApp')
             return;
         }
 
+        delete $scope.fabricChoice.$id;
+        delete $scope.fabricChoice.$priority;
+
         var article = {
             season: $scope.season,
             collection: collectionNames[$scope.collection],
             category: categoryNames[$scope.category],
             color: styleColorNames[$scope.styleColor],
             styleNumber: $scope.styleNum,
-            fabric: $scope.fabricChoice
+            fabric: $scope.fabricChoice,
+            image: $scope.myCroppedImage
         }
 
         //Push article to firebase
@@ -70,7 +91,7 @@ angular.module('myApp')
         $scope.category = '';
         $scope.styleColor = '';
         $scope.styleNum = '';
-        $scope.fabric = '';
+        $scope.fabricChoice = '';
         $scope.searchText = '';
     };
 
@@ -96,7 +117,7 @@ angular.module('myApp')
             result = false;
             $scope.showStyleNumError = true;
         }
-        if ($scope.fabric == undefined) {
+        if ($scope.fabricChoice == undefined) {
             result = false;
             $scope.showFabricError = true;
         }
@@ -104,6 +125,8 @@ angular.module('myApp')
         return result;
 
     }
+
+
 
 
     }]);

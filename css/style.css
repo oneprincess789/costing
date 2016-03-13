@@ -108,3 +108,36 @@
     font-size: 20px;
     text-align: center;
 }
+
+.submitImage {
+    align-content: center;
+}
+
+.cropArea {
+      background: #E4E4E4;
+      overflow: hidden;
+      width:500px;
+      height:350px;
+    }
+
+.indivStyleTitle {
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.indivStylePage {
+    padding-left: 100px;
+    padding-top: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+}
+
+.indivStyleSeason {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    padding-left: 10px;
+}
+
+

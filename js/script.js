@@ -1,5 +1,5 @@
 /*global angular*/
-angular.module('myApp', ['ngRoute', 'firebase'])
+angular.module('myApp', ['ngRoute', 'firebase', 'ngImgCrop'])
     .config(function ($routeProvider) {
         'use strict';
         $routeProvider
@@ -15,7 +15,7 @@ angular.module('myApp', ['ngRoute', 'firebase'])
                 templateUrl: 'templates/articlesList.html',
                 controller: 'articlesController'
             })
-            .when('/home', {
+            .when('/', {
                 templateUrl: 'templates/home.html',
                 controller: 'homeController'
             })
@@ -26,6 +26,10 @@ angular.module('myApp', ['ngRoute', 'firebase'])
             .when('/about', {
                 templateUrl: 'templates/about.html',
                 controller: 'aboutController'
+            })
+            .when('/individualArticle/:articleId', {
+                templateUrl: 'templates/individualArticle.html',
+                controller: 'individualArticleController'
             })
             .otherwise({
                 redirectTo: '/'
