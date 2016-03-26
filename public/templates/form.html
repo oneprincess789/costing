@@ -1,0 +1,79 @@
+<form class="form">
+    Season:
+    <select ng-model="season">
+        <option value="select">...</option>
+        <option value="SP16">Spring 2016</option>
+        <option value="PF16">Pre-Fall 2016</option>
+        <option value="FA16">Fall 2016</option>
+        <option value="RE16">Resort 2016</option>
+    </select>
+    <p class="error" ng-show="showSeasonError">Please Select A Season!</p>
+    Collection:
+    <select ng-model="collection">
+        <option value="-1">...</option>
+        <option value="0">Collection</option>
+        <option value="1">Star USA</option>
+        <option value="2">Luxe</option>
+    </select>
+    <p class="error" ng-show="showCollectionError">Please Select A Collection!</p>
+    Category:
+    <select ng-model="category">
+        <option value="select">...</option>
+        <option value="0">Outerwear</option>
+        <option value="1">Soft Jacket</option>
+        <option value="2">Tailored</option>
+        <option value="3">Denim</option>
+        <option value="4">Sport Pant</option>
+        <option value="5">Dress Pant</option>
+        <option value="6">Sport Shirt</option>
+        <option value="7">Dress Shirt</option>
+        <option value="8">Short</option>
+        <option value="9">Leather Outerwear</option>
+        <option value="10">Vest</option>
+        <option value="11">Knit</option>
+        <option value="12">Sweater</option>
+        <option value="13">Footwear</option>
+        <option value="14">Bag</option>
+        <option value="15">Small Leather Good</option>
+        <option value="16">Scarf</option>
+        <option value="17">Woven Hat</option>
+
+    </select>
+    <p class="error" ng-show="showCategoryError">Please Select A Category!</p>
+    <br>
+    <br> Style #:
+    <input type="text" name="STYLE #" ng-model="styleNum">
+    <p class="error" ng-show="showStyleNumError">Please Enter A Style Number!</p>
+
+    <select ng-model="fabricChoice" ng-options="fabric.code for fabric in fabrics">
+    </select>
+
+    <p class="error" ng-show="showFabricError">Please Assign A Fabric!</p>
+    Color(s):
+    <select ng-model="styleColor">
+        <option value="select">...</option>
+        <option value="001">001 Black</option>
+        <option value="100">100 White</option>
+        <option value="410">410 Indigo</option>
+
+    </select>
+    <p class="error" ng-show="showColorError">Please Select A Color!</p>
+    <br>
+    <br> Material Cost per Unit:
+    <input type="text" name="MATERIAL TOTAL" ng-model="materialTotal"> Wash:
+    <input type="text" name="WASH" ng-model="wash"> CMT:
+    <input type="text" name="CMT" ng-model="cmt">
+    <br>
+    <br>
+    <div>Select an image file:
+        <input type="file" id="fileInput" />
+    </div>
+    <div class="cropArea">
+        <img-crop image="myImage" result-image="myCroppedImage"></img-crop>
+    </div>
+    <div>Cropped Image:</div>
+    <div><img ng-src="{{myCroppedImage}}" /></div>
+    <br>
+    <input type="submit" value="Submit" class="btn btn-success btn-large" ng-click="submitButton()">
+    <button class="btn btn-warning" ng-click="clearForm()">Clear</button>
+</form>
