@@ -1,5 +1,7 @@
 /*global angular*/
 angular.module('myApp', ['ngRoute', 'firebase', 'ngImgCrop'])
+//Inside the jon branch
+
     .config(function ($routeProvider) {
         'use strict';
         $routeProvider
