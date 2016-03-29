@@ -2,7 +2,7 @@
 Add a Style:
 </h2>
 
-<form class="form">
+<form class="addForm">
     <table class="styleForm">
         <tr>
             <td> Season:</td>
@@ -103,20 +103,12 @@ Add a Style:
             <td> CMT: </td>
             <td><input type="text" name="CMT" ng-model="cmt"> </td>
         </tr>
+        <tr>
+            <td>Select an image file:</td>
+            <td><input type="file" id="fileInput" /></td>
+        </tr>
     </table>
 
-
-
-
-
-    <br>
-    <br>
-    
-    <br>
-    <br>
-    <div>Select an image file:
-        <input type="file" id="fileInput" />
-    </div>
     <div ng-show="showImg" class="cropArea">
         <img-crop area-type="square" image="myImage" result-image="myCroppedImage"></img-crop>
     </div>
@@ -124,6 +116,6 @@ Add a Style:
     <div ng-show="showImg"><img ng-src="{{myCroppedImage}}" /></div>
     
     <br>
-    <input type="submit" value="Submit" class="btn btn-success btn-large" ng-click="submitButton()">
-    <button class="btn btn-warning" ng-click="clearForm()">Clear</button>
+    <button class="btn btn-success btn-large" ng-click="submitButton()">Submit</button>
+    <button class="btn btn-warning btn-large" ng-click="clearForm()">Clear</button>
 </form>

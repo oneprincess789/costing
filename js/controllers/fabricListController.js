@@ -3,7 +3,7 @@ angular.module('myApp')
 
 .controller('fabricListController', ['$scope', '$firebaseArray', '$firebaseObject', function ($scope, $firebaseArray, $firebaseObject) {
 
-
+    $scope.loading = true;
     $scope.fabricCode = '';
     $scope.mill = '';
     $scope.article = '';
@@ -93,6 +93,7 @@ angular.module('myApp')
     firebaseObjectFabrics.$loaded(
         function (data) {
             $scope.database = data; // true
+            $scope.loading = false;
         },
         function (error) {
             console.error("Error:", error);

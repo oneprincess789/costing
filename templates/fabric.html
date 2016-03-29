@@ -1,10 +1,13 @@
 <div class="fabricEntryPage">
+    <div class="loading" ng-show="loading">
+        <img src="images/loading.gif"/>
+    </div>
 
     <h1 class="fabricEntryTitle">FABRIC ENTRY</h1>
 
-    <div class="text-center">
+    <div class="text-center searchBox">
         Search:
-        <input type="text" ng-model="searchText" />
+        <input type="text" ng-model="searchText"/>
     </div>
     <br>
 
@@ -19,13 +22,15 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
                     </div>
                     <div class="modal-body">
                         <form class="fabricModalForm">
                             Fabric Code:
                             <input type="text" name="Fabric Code" ng-model="fabricCode">
+
                             <p class="error" ng-show="showFabricCodeError">Please Enter A Fabric Code!</p>
                             <br>
                             <br> Mill:
@@ -63,7 +68,8 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <input type="submit" value="Save" class="btn btn-success btn-large" ng-click="submitButton(fabric.$id)">
+                        <input type="submit" value="Save" class="btn btn-success btn-large"
+                               ng-click="submitButton(fabric.$id)">
                         <button class="btn btn-warning" ng-click="clearForm()">Clear</button>
                     </div>
                 </div>
@@ -71,22 +77,24 @@
         </div>
     </div>
 
-    <table class="table stylesTable">
+    <table class="table stylesTable fabricTable">
         <thead>
-            <th>Fabric Code</th>
-            <th>Mill</th>
-            <th>Article</th>
-            <th>Content</th>
+        <th>Fabric Code</th>
+        <th>Mill</th>
+        <th>Article</th>
+        <th>Content</th>
+        <th></th>
         </thead>
         <tbody>
-            <tr ng-repeat="fabric in database  | filter: searchText">
-                <td>{{fabric.code}}</td>
-                <td>{{fabric.mill}}</td>
-                <td>{{fabric.article}}</td>
-                <td>{{fabric.content}}</td>
-                <td><i class="fa fa-trash pointer" ng-click="deleteFabric(fabric.$id)"></i>
-                    <i class="fa fa-pencil-square-o pointer" data-toggle="modal" data-target="#myModal" ng-click="editFabric(fabric.$id)"></i></td>
-            </tr>
+        <tr ng-repeat="fabric in database  | filter: searchText">
+            <td>{{fabric.code}}</td>
+            <td>{{fabric.mill}}</td>
+            <td>{{fabric.article}}</td>
+            <td>{{fabric.content}}</td>
+            <td><i class="fa fa-trash pointer" ng-click="deleteFabric(fabric.$id)"></i>
+                <i class="fa fa-pencil-square-o pointer" data-toggle="modal" data-target="#myModal"
+                   ng-click="editFabric(fabric.$id)"></i></td>
+        </tr>
         </tbody>
     </table>
 </div>

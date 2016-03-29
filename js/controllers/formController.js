@@ -12,15 +12,15 @@ angular.module('myApp')
     $scope.showImg = false;
     $scope.myImage = '';
     $scope.myCroppedImage = '../../images/noimgavailable.jpg';
-    $scope.season;
-    $scope.collection;
-    $scope.category;
-    $scope.styleColor;
-    $scope.styleNum;
-    $scope.fabricChoice;
-    $scope.searchText;
+    $scope.season = '';
+    $scope.collection = '';
+    $scope.category = '';
+    $scope.styleColor = '';
+    $scope.styleNum = '';
+    $scope.fabricChoice = '';
+    $scope.searchText = '';
     $scope.showSeasonError = false;
-    $scope.fabrics;
+    $scope.fabrics = '';
 
     var handleFileSelect = function (evt) {
         $scope.showImg = true;
