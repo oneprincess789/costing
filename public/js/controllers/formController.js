@@ -9,20 +9,21 @@ angular.module('myApp')
         "410": "Indigo"
     };
 
-
+    $scope.showImg = false;
     $scope.myImage = '';
-    $scope.myCroppedImage = '';
-    $scope.season;
-    $scope.collection;
-    $scope.category;
-    $scope.styleColor;
-    $scope.styleNum;
-    $scope.fabricChoice;
-    $scope.searchText;
+    $scope.myCroppedImage = '../../images/noimgavailable.jpg';
+    $scope.season = '';
+    $scope.collection = '';
+    $scope.category = '';
+    $scope.styleColor = '';
+    $scope.styleNum = '';
+    $scope.fabricChoice = '';
+    $scope.searchText = '';
     $scope.showSeasonError = false;
-    $scope.fabrics;
+    $scope.fabrics = '';
 
     var handleFileSelect = function (evt) {
+        $scope.showImg = true;
         var file = evt.currentTarget.files[0];
         var reader = new FileReader();
         reader.onload = function (evt) {

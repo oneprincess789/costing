@@ -2,6 +2,8 @@ angular.module('myApp')
 
 
 .controller('articlesController', ['$scope', '$firebaseArray', function ($scope, $firebaseArray) {
+    $scope.loading = true;
+
     //Create firebase
     var ref = new Firebase("https://costinganalysis.firebaseio.com/seasons");
     var firebaseObjectSeasons = $firebaseArray(ref);
@@ -10,6 +12,7 @@ angular.module('myApp')
     firebaseObjectSeasons.$loaded(
         function (data) {
             $scope.database = data; // true
+            $scope.loading = false;
         },
         function (error) {
             console.error("Error:", error);

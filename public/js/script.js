@@ -1,12 +1,10 @@
 /*global angular*/
 angular.module('myApp', ['ngRoute', 'firebase', 'ngImgCrop'])
+//Inside the jon branch
+
     .config(function ($routeProvider) {
         'use strict';
         $routeProvider
-            .when('/start', {
-                templateUrl: 'templates/start.html',
-                controller: 'startController'
-            })
             .when('/form', {
                 templateUrl: 'templates/form.html',
                 controller: 'formController'
