@@ -86,7 +86,7 @@ h2 {
 
 .fabricEntryTitle {
     padding-top: 50px;
-    padding-left: 300px;
+    padding-left: 420px;
     text-align: center;
     font-family: 'Open Sans', sans-serif;
     font-size: 60pt;
@@ -233,7 +233,6 @@ h2 {
 }
 
 .searchBox {
-    color: black;
     font-weight: bold;
     padding: 25px;
     font-size: 22px;
@@ -266,6 +265,11 @@ h2 {
     font-size: 30px;
     height: 100px;
     padding: 25px 25px;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
 }
 
 .articlesListPage {
@@ -274,3 +278,4 @@ h2 {
     height: 900px;
     margin-top: -75px;
 }
+
