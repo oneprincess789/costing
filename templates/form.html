@@ -1,122 +1,126 @@
+<div class="addStylePage">
 
+    <form class="addForm">
 
-<form class="addForm">
-  
-    <h2 class="formTitle">Add a Style:</h2>
+        <h2 class="formTitle">Add a Style:</h2>
 
-    <table class="styleForm">
-        <tr>
-            <td> Season:</td>
-            <td>
-                <select ng-model="season">
-                    <option value="select">...</option>
-                    <option value="SP16">Spring 2016</option>
-                    <option value="PF16">Pre-Fall 2016</option>
-                    <option value="FA16">Fall 2016</option>
-                    <option value="RE16">Resort 2016</option>
-                </select>
-                <p class="error" ng-show="showSeasonError">Please Select A Season!</p>
-            </td>
-        </tr>
+        <table class="styleForm">
+            <tr>
+                <td> Season:</td>
+                <td>
+                    <select ng-model="season">
+                        <option value="select">...</option>
+                        <option value="SP16">Spring 2016</option>
+                        <option value="PF16">Pre-Fall 2016</option>
+                        <option value="FA16">Fall 2016</option>
+                        <option value="RE16">Resort 2016</option>
+                    </select>
+                    <p class="error" ng-show="showSeasonError">Please Select A Season!</p>
+                </td>
+            </tr>
 
-        <tr>
-            <td> Collection: </td>
-            <td>
-                <select ng-model="collection">
-                    <option value="-1">...</option>
-                    <option value="0">Collection</option>
-                    <option value="1">Star USA</option>
-                    <option value="2">Luxe</option>
-                </select>
-                <p class="error" ng-show="showCollectionError">Please Select A Collection!</p>
-            </td>
-        </tr>
+            <tr>
+                <td> Collection: </td>
+                <td>
+                    <select ng-model="collection">
+                        <option value="-1">...</option>
+                        <option value="0">Collection</option>
+                        <option value="1">Star USA</option>
+                        <option value="2">Luxe</option>
+                    </select>
+                    <p class="error" ng-show="showCollectionError">Please Select A Collection!</p>
+                </td>
+            </tr>
 
-        <tr>
-            <td> Category: </td>
-            <td>
-                <select ng-model="category">
-                    <option value="select">...</option>
-                    <option value="0">Outerwear</option>
-                    <option value="1">Soft Jacket</option>
-                    <option value="2">Tailored</option>
-                    <option value="3">Denim</option>
-                    <option value="4">Sport Pant</option>
-                    <option value="5">Dress Pant</option>
-                    <option value="6">Sport Shirt</option>
-                    <option value="7">Dress Shirt</option>
-                    <option value="8">Short</option>
-                    <option value="9">Leather Outerwear</option>
-                    <option value="10">Vest</option>
-                    <option value="11">Knit</option>
-                    <option value="12">Sweater</option>
-                    <option value="13">Footwear</option>
-                    <option value="14">Bag</option>
-                    <option value="15">Small Leather Good</option>
-                    <option value="16">Scarf</option>
-                    <option value="17">Woven Hat</option>
+            <tr>
+                <td> Category: </td>
+                <td>
+                    <select ng-model="category">
+                        <option value="select">...</option>
+                        <option value="0">Outerwear</option>
+                        <option value="1">Soft Jacket</option>
+                        <option value="2">Tailored</option>
+                        <option value="3">Denim</option>
+                        <option value="4">Sport Pant</option>
+                        <option value="5">Dress Pant</option>
+                        <option value="6">Sport Shirt</option>
+                        <option value="7">Dress Shirt</option>
+                        <option value="8">Short</option>
+                        <option value="9">Leather Outerwear</option>
+                        <option value="10">Vest</option>
+                        <option value="11">Knit</option>
+                        <option value="12">Sweater</option>
+                        <option value="13">Footwear</option>
+                        <option value="14">Bag</option>
+                        <option value="15">Small Leather Good</option>
+                        <option value="16">Scarf</option>
+                        <option value="17">Woven Hat</option>
 
-                </select>
-                <p class="error" ng-show="showCategoryError">Please Select A Category!</p>
-            </td>
-        </tr>
-        <tr>
-            <td> Style #:</td>
-            <td>
-                <input type="text" name="STYLE #" ng-model="styleNum">
-                <p class="error" ng-show="showStyleNumError">Please Enter A Style Number!</p>
-            </td>
-        </tr>
-        <tr>
-            <td>Fabric: </td>
-            <td>
-                <select ng-model="fabricChoice" ng-options="fabric.code for fabric in fabrics">
-                </select>
+                    </select>
+                    <p class="error" ng-show="showCategoryError">Please Select A Category!</p>
+                </td>
+            </tr>
+            <tr>
+                <td> Style #:</td>
+                <td>
+                    <input type="text" name="STYLE #" ng-model="styleNum">
+                    <p class="error" ng-show="showStyleNumError">Please Enter A Style Number!</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Fabric: </td>
+                <td>
+                    <select ng-model="fabricChoice" ng-options="fabric.code for fabric in fabrics">
+                    </select>
 
-                <p class="error" ng-show="showFabricError">Please Assign A Fabric!</p>
-            </td>
-        </tr>
-        <tr>
-            <td> Color(s):</td>
-            <td>
-                <select ng-model="styleColor">
-                    <option value="select">...</option>
-                    <option value="001">001 Black</option>
-                    <option value="100">100 White</option>
-                    <option value="410">410 Indigo</option>
+                    <p class="error" ng-show="showFabricError">Please Assign A Fabric!</p>
+                </td>
+            </tr>
+            <tr>
+                <td> Color(s):</td>
+                <td>
+                    <select ng-model="styleColor">
+                        <option value="select">...</option>
+                        <option value="001">001 Black</option>
+                        <option value="100">100 White</option>
+                        <option value="410">410 Indigo</option>
 
-                </select>
-                <p class="error" ng-show="showColorError">Please Select A Color!</p>
-            </td>
-        </tr>
-        <tr>
-            <td> Material Cost per Unit:</td>
-            <td>
-                <input type="text" name="MATERIAL TOTAL" ng-model="materialTotal"> </td>
-        </tr>
-        <tr>
-            <td>Wash: </td>
-            <td>
-                <input type="text" name="WASH" ng-model="wash">
-            </td>
-        </tr>
-        <tr>
-            <td> CMT: </td>
-            <td><input type="text" name="CMT" ng-model="cmt"> </td>
-        </tr>
-        <tr>
-            <td>Select an image file:</td>
-            <td><input type="file" id="fileInput" /></td>
-        </tr>
-    </table>
+                    </select>
+                    <p class="error" ng-show="showColorError">Please Select A Color!</p>
+                </td>
+            </tr>
+            <tr>
+                <td> Material Cost per Unit:</td>
+                <td>
+                    <input type="text" name="MATERIAL TOTAL" ng-model="materialTotal"> </td>
+            </tr>
+            <tr>
+                <td>Wash: </td>
+                <td>
+                    <input type="text" name="WASH" ng-model="wash">
+                </td>
+            </tr>
+            <tr>
+                <td> CMT: </td>
+                <td>
+                    <input type="text" name="CMT" ng-model="cmt"> </td>
+            </tr>
+            <tr>
+                <td>Select an image file:</td>
+                <td>
+                    <input type="file" id="fileInput" />
+                </td>
+            </tr>
+        </table>
 
-    <div ng-show="showImg" class="cropArea">
-        <img-crop area-type="square" image="myImage" result-image="myCroppedImage"></img-crop>
-    </div>
-    <div ng-show="showImg">Cropped Image:</div>
-    <div ng-show="showImg"><img ng-src="{{myCroppedImage}}" /></div>
-    
-    <br>
-    <button class="btn btn-large" ng-click="submitButton()">Submit</button>
-    <button class="btn btn-large" ng-click="clearForm()">Clear</button>
-</form>
+        <div ng-show="showImg" class="cropArea">
+            <img-crop area-type="square" image="myImage" result-image="myCroppedImage"></img-crop>
+        </div>
+        <div ng-show="showImg">Cropped Image:</div>
+        <div ng-show="showImg"><img ng-src="{{myCroppedImage}}" /></div>
+
+        <br>
+        <button class="formButton" ng-click="submitButton()">Submit</button>
+        <button class="formButton" ng-click="clearForm()">Clear</button>
+    </form>
+</div>

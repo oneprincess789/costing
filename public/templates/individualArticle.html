@@ -1,29 +1,29 @@
-<div class="indivStyleSeason">
-    {{article.season}} <br>
-    {{article.collection}} 
-    {{article.category}}
-</div>
+<div class="indivArticlePage">
+    <div class="indivStyleSeason">
+        {{article.season}}
+        <br> {{article.collection}} {{article.category}}
+    </div>
 
-<div class="indivStyleTitle">
+    <div class="indivStyleTitle">
 
-    {{article.styleNumber}} - {{article.fabric.code}}
+        {{article.styleNumber}} - {{article.fabric.code}}
 
-</div>
+    </div>
 
-<div class="indivStylePage">
+    <div class="indivStylePage">
 
-    {{article.myImage}} {{article.styleColor}}
+        {{article.myImage}} {{article.styleColor}}
 
-    <br>
-    <br> Fabric Details
-    <br> Mill: {{article.fabric.mill}}
-    <br> Article: {{article.fabric.article}}
-    <br> Content: {{article.fabric.content}}
-    <br>
+        <br>
+        <br> Fabric Details
+        <br> Mill: {{article.fabric.mill}}
+        <br> Article: {{article.fabric.article}}
+        <br> Content: {{article.fabric.content}}
+        <br>
 
-</div>
+    </div>
 
-<!--
+    <!--
 <div>
 
     <table class="table table-hover stylesTable">
@@ -47,3 +47,4 @@
 </table>
     
 </div>-->
+</div>

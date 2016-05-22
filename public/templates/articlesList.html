@@ -1,32 +1,38 @@
-<div class="text-center searchBox">
-    Search:
-    <input type="text" ng-model="searchText" />
-    <button class="btn compareButton" ng-show="compareArray.length > 1" ng-click="compare()">Compare</button>
-</div>
+<div class="articlesPage">
 
-<div class="loading" ng-show="loading">
-    <img src="images/loading.gif"/>
-</div>
+    <div class="text-center searchBox">
+        Filter:
+        <input type="text" ng-model="searchText" />
+        <button class="btn compareButton" ng-show="compareArray.length > 1" ng-click="compare()">Compare</button>
+    </div>
 
-<table class="table table-hover stylesTable">
-    <thead>
-        <th>Season</th>
-        <th>Collection</th>
-        <th>Category</th>
-        <th>Style number</th>
-        <th>Image</th>
-        <th>Fabric</th>
-        <th>Color</th>
-    </thead>
-    <tbody>
-        <tr ng-repeat="article in database  | filter: searchText" ng-click="rowClicked(article.styleNumber, $index)" class="pointer">
-            <td>{{article.season}}</td>
-            <td>{{article.collection}}</td>
-            <td>{{article.category}}</td>
-            <td><a href="#/individualArticle/{{article.$id}}">{{article.styleNumber}}</a> </td>
-            <td><img ng-src="{{article.image}}" /></td>
-            <td>{{article.fabric.code}}</td>
-            <td>{{article.color}}</td>
-        </tr>
-    </tbody>
-</table>
+    <div class="loading" ng-show="loading">
+        <img src="images/loading.gif" />
+    </div>
+
+    <table class="table stylesTable">
+        <thead>
+            <th>Season</th>
+            <th>Collection</th>
+            <th>Category</th>
+            <th>Style number</th>
+            <th>Image</th>
+            <th>Fabric</th>
+            <th>Color</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="article in database  | filter: searchText" ng-click="rowClicked(article.styleNumber, $index)">
+                <td>{{article.season}}</td>
+                <td>{{article.collection}}</td>
+                <td>{{article.category}}</td>
+                <td><a href="#/individualArticle/{{article.$id}}">{{article.styleNumber}}</a> </td>
+                <td><img ng-src="{{article.image}}" /></td>
+                <td>{{article.fabric.code}}</td>
+                <td>{{article.color}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <button type="button" class="toFormButton"><a href="#/form">Add A Style</a></button>
+    
+</div>
