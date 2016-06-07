@@ -57,7 +57,7 @@ angular.module('myApp')
             }
 
             //Push article to firebase
-            var firebase = new Firebase("https://costinganalysis.firebaseio.com/fabric");
+            $rootScope.rootRef.database().ref("https://costinganalysis.firebaseio.com/fabric");
 
             firebase.push(fabric, function (error) {
                 if (error) {
@@ -85,7 +85,7 @@ angular.module('myApp')
 
     //Create firebase
 
-    var ref = new Firebase("https://costinganalysis.firebaseio.com/fabric");
+    $rootScope.rootRef.database().ref("https://costinganalysis.firebaseio.com/fabric");
 
     var firebaseObjectFabrics = $firebaseArray(ref);
 

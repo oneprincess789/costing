@@ -5,7 +5,7 @@ angular.module('myApp')
     $scope.loading = true;
 
     //Create firebase
-    var ref = new Firebase("https://costinganalysis.firebaseio.com/seasons");
+    $rootScope.rootRef.database().ref("https://costinganalysis.firebaseio.com/seasons");
     var firebaseObjectSeasons = $firebaseArray(ref);
 
     //Load the Data in an object

@@ -36,7 +36,7 @@ angular.module('myApp')
 
     angular.element(document.querySelector('#fileInput')).on('change', handleFileSelect);
 
-    var ref = new Firebase("https://costinganalysis.firebaseio.com/fabric");
+    $rootScope.rootRef.database().ref("https://costinganalysis.firebaseio.com/fabric");
 
     var firebaseObjectFabrics = $firebaseArray(ref);
 
@@ -74,7 +74,7 @@ angular.module('myApp')
         }
 
         //Push article to firebase
-        var firebase = new Firebase("https://costinganalysis.firebaseio.com/seasons");
+        $rootScope.rootRef.database().ref("https://costinganalysis.firebaseio.com/seasons");
 
         firebase.push(article, function (error) {
             if (error) {
