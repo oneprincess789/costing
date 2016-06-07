@@ -2,17 +2,6 @@
 angular.module('myApp', ['ngRoute', 'firebase', 'ngImgCrop'])
     //Inside the jon branch
 
-// Initialize Firebase
-var config = {
-    apiKey: "AIzaSyDMHxh4B4foWMIGyN3PkErZAgBvDotnXTo",
-    authDomain: "costinganalysis.firebaseapp.com",
-    databaseURL: "https://costinganalysis.firebaseio.com",
-    storageBucket: "costinganalysis.appspot.com",
-};
-firebase.initializeApp(config);
-
-var rootRef = firebase.database().ref();
-
 .config(function ($routeProvider) {
     'use strict';
     $routeProvider
@@ -44,3 +33,14 @@ var rootRef = firebase.database().ref();
             redirectTo: '/'
         });
 })
+
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyDMHxh4B4foWMIGyN3PkErZAgBvDotnXTo",
+    authDomain: "costinganalysis.firebaseapp.com",
+    databaseURL: "https://costinganalysis.firebaseio.com",
+    storageBucket: "costinganalysis.appspot.com",
+};
+firebase.initializeApp(config);
+
+var rootRef = firebase.database().ref();

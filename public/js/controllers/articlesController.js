@@ -1,7 +1,7 @@
 angular.module('myApp')
 
 
-.controller('articlesController', ['$scope', '$firebaseArray', function ($scope, $firebaseArray) {
+.controller('articlesController', ['$scope', '$firebaseArray', function ($scope, $firebaseArray, $rootScope) {
     $scope.loading = true;
 
     //Create firebase

@@ -1,7 +1,7 @@
 angular.module('myApp')
 
 
-.controller('fabricListController', ['$scope', '$firebaseArray', '$firebaseObject', function ($scope, $firebaseArray, $firebaseObject) {
+.controller('fabricListController', ['$scope', '$firebaseArray', '$firebaseObject', function ($scope, $firebaseArray, $firebaseObject, $rootScope) {
 
     $scope.loading = true;
     $scope.fabricCode = '';

@@ -1,6 +1,6 @@
 angular.module('myApp')
 
-.controller('formController', ['$scope', '$firebaseArray', function ($scope, $firebaseArray) {
+.controller('formController', ['$scope', '$firebaseArray', function ($scope, $firebaseArray, $rootScope) {
     var collectionNames = ["Collection", "Star USA", "Luxe"];
     var categoryNames = ["Outerwear", "Soft Jacket", "Tailored Clothing", "Denim", "Sport Pant", "Dress Pant", "Sportshirt", "Dress Shirt", "Short", "Leather Outerwear", "Sport Vest", "Knit", "Sweater", "Footwear", "Bag", "Small Leather Good", "Woven Scarf", "Woven Hat"]
     var styleColorNames = {
