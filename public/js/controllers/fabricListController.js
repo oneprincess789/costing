@@ -1,7 +1,7 @@
 angular.module('myApp')
 
 
-.controller('fabricListController', ['$scope', '$firebaseArray', '$firebaseObject', function ($scope, $firebaseArray, $firebaseObject, $rootScope) {
+.controller('fabricListController', ['$scope', '$firebaseArray', '$firebaseObject', function ($scope, $firebaseArray, $firebaseObject) {
 
     $scope.loading = true;
     $scope.fabricCode = '';
@@ -57,9 +57,7 @@ angular.module('myApp')
             }
 
             //Push article to firebase
-            $rootScope.rootRef.database().ref("https://costinganalysis.firebaseio.com/fabric");
-
-            firebase.push(fabric, function (error) {
+            firebase.database().ref("https://costinganalysis.firebaseio.com/fabric").push(fabric, function (error) {
                 if (error) {
                     alert("something happened");
                 } else {
@@ -85,7 +83,7 @@ angular.module('myApp')
 
     //Create firebase
 
-    $rootScope.rootRef.database().ref("https://costinganalysis.firebaseio.com/fabric");
+    firebase.database().ref("https://costinganalysis.firebaseio.com/fabric");
 
     var firebaseObjectFabrics = $firebaseArray(ref);
 

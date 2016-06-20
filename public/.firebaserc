@@ -1,6 +1,7 @@
 {
   "projects": {
     "staging": "costinganalysis",
-    "default": "costinganalysis"
+    "default": "costinganalysis",
+    "costing1": "costinganalysis"
   }
 }

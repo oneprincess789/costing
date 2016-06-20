@@ -1,6 +1,6 @@
 angular.module('myApp')
 
-.controller('formController', ['$scope', '$firebaseArray', function ($scope, $firebaseArray, $rootScope) {
+.controller('formController', ['$scope', '$firebaseArray', function ($scope, $firebaseArray) {
     var collectionNames = ["Collection", "Star USA", "Luxe"];
     var categoryNames = ["Outerwear", "Soft Jacket", "Tailored Clothing", "Denim", "Sport Pant", "Dress Pant", "Sportshirt", "Dress Shirt", "Short", "Leather Outerwear", "Sport Vest", "Knit", "Sweater", "Footwear", "Bag", "Small Leather Good", "Woven Scarf", "Woven Hat"]
     var styleColorNames = {
@@ -36,7 +36,7 @@ angular.module('myApp')
 
     angular.element(document.querySelector('#fileInput')).on('change', handleFileSelect);
 
-    $rootScope.rootRef.database().ref("https://costinganalysis.firebaseio.com/fabric");
+    firebase.database().ref("https://costinganalysis.firebaseio.com/fabric");
 
     var firebaseObjectFabrics = $firebaseArray(ref);
 
@@ -74,9 +74,7 @@ angular.module('myApp')
         }
 
         //Push article to firebase
-        $rootScope.rootRef.database().ref("https://costinganalysis.firebaseio.com/seasons");
-
-        firebase.push(article, function (error) {
+        firebase.database().ref("https://costinganalysis.firebaseio.com/seasons").push(article, function (error) {
             if (error) {
                 alert("something happened");
             } else {
